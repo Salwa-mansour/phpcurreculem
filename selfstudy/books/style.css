@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.container h1:first-child{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(71, 71, 75);
+    color: #fff;
+    font-family: sans-serif;
+    padding-top: 20px ;
+    font-size: 2.25rem;
+}
+.padding-y2{
+    padding-top: 10px;
+}
+.displayfelx button{
+    
+    padding: 3px;
+    margin: 10px;
+}
+.displayfelx{
+    border: rgb(189, 97, 97) solid 1px;
+}

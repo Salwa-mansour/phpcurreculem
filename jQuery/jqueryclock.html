@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js">
+
+    </script>
+</head>
+<style>
+    span{
+        display: inline-block;
+        font-size: 1.5rem;
+    }
+    span::after{
+        content: ':';
+    }
+    span:last-child::after{
+        content: ' ';
+    }
+    body{
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(green,blue);
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+         align-items: center;
+        justify-content: center;
+    }
+    .clock{
+       width: 200px;
+       background-color: rgb(234, 248, 247);
+       text-align: center;
+    }
+</style>
+<body>
+    <div class="clock">
+        <span class="hours">3</span>
+        <span class="mints">34</span>
+        <span class="sconds">22</span>
+    </div>  
+ 
+    <script >
+
+   
+    $(document).ready(function(){
+        var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+     
+
+     function   myfunction(){
+            $(".hours").text(h);
+            $(".mints").text(m);
+            $(".sconds").text(s);
+        }
+
+ setInterval(myfunction(),1000);
+     
+
+
+    })
+    </script>
+</body>
+</html>
