@@ -21,9 +21,9 @@
    echo $newselemnt;
   }
 
-  function buttonElement($txt,$name,$attr){
+  function buttonElement($txt,$name,$value){
     $btn="
-        <button name='$name' '$attr' >$txt</button>
+        <button name='$name' value='$value' >$txt</button>
     ";
     echo $btn;
   }

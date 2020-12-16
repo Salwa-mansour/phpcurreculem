@@ -19,7 +19,7 @@ require_once("operation.php")
             <h1 >Book Store</h1>
 
             <div class="display_flex">
-                <form action="operation.php" method="post" class="width50">
+                <form action="" method="post" class="width50">
                     <!-- <div class="padding-y2">
                         <input type="text" placeholder="id">
                         <input type="button" value="hollo">
@@ -28,7 +28,7 @@ require_once("operation.php")
 
                 // inputElement("eendn","jll","nb","ibg");
                 // inputElement("eeee","eeww","dfdd","eee");
-                newsinput(1,"hallo","dfkejfefewn  e ejfkle fe ","4.343");
+                newsinput(1,""," ","");
             ?>
                 <div class="displayfelx">
                     <!-- <button>Create</button> -->
