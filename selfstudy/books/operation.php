@@ -7,41 +7,23 @@
 
     //create button cklick
     if(isset($_POST['create'])){
-      createData();
+        createData();
     }
 
-    //create function create data
+    //create function
     function createData(){
-       // $newsid=$_POST['news_number'];
-        $newsid =textboxvalue("news_number");
-        $newstitle = textboxvalue("news_title");
-        $newsdetails = textboxvalue("news_details");
-        $newsdate = textboxvalue("news_date");
-
-        if($newsid && $newstitle && $newsdetails && $newsdate){
-            $sql = "INSERT INTO news3 (news_id,news_title,news_details,news_date) 
-            VALUES ('$newsid','$newstitle','$newsdetails','$newsdate')";
-            if(mysqli_query($GLOBALS['con'], $sql)){
-                TextNode("success", "Record Successfully Inserted...!");
-            }else{
-                echo "Error";
-            }
-
-            }else{
-                TextNode("error", "Provide Data in the Textbox");
-            }
-            }
-
-            // messages
-        function TextNode($classname, $msg){
-            $element = "<h6 class='$classname'>$msg</h6>";
-            echo $element;
+        $newsID = textboxValue("news_number");
+        $newsTitle = textboxValue("news_title");
+        $newsDetails = textboxValue("news_details");
+        $newsDate = textboxValue("news_date");
+         
+        if($newsID && $newsTitle && $newsDetails && $newsDate){
+            $sql = "INSERT INTO mynews()"
         }
-
-    //function call data
-    function textboxvalue($value){
-        $textbox = mysqli_real_escape_string($GLOBALS['con'],trim($_POST[$value]));
-        //$textbox = $_POST[$value]; // why not bring the value emedidatly >> the preavias way is secured egingest sql enjction
+    }
+    //we are sending the name of the input and reseving the value of it as returened valeu
+    function textboxValue($value){
+        $textbox = mysqli_real_escape_string($GLOBALS['con'],trim($_POST['$value']));
         if(empty($textbox)){
             return false;
         }else{

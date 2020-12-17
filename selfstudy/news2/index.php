@@ -34,10 +34,18 @@
               </div>
               </form>
               <div class="displayflex">
-               <span>id</span>
-               <h1>news title</h1>
-               <p>news details</p>
-               <small>date</small>
+                  <?php
+                  //reade button cklick
+                 if(isset($_POST['read'])){
+                $result= getData();
+                          readData($result['newsid'],$result['newstitle'],$result['newsdetails'],$result['newsdate']);
+                }
+      
+          
+                  ?>
+                    
+      
+              
            </div>
               </div>
           </div>
