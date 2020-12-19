@@ -26,7 +26,7 @@
                 newsdate DATE );
             ";
             if(mysqli_query($con,$sql)){
-                {echo('you programer!');
+                {echo('YO Programer!');
                 return $con;}
             }else{echo('cannot create talbe'.mysqli_error($con));}
 
