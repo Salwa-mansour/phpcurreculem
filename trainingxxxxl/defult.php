@@ -38,8 +38,12 @@
         
                 </thead>
               <?php     
-               $result[]= getData();
-           readData3($result[0],$result[1],$result[1],$result[0]);
+               $result= getData();
+               //$i<the number of rows we need to retrive
+            for($i=0;$i<8;$i++) {
+     readData3($result[$i]['newsid'],$result[$i]['newstitle'],$result[$i]['newsdetails'],$result[$i]['newsdate']);
+    
+                 }
         
             
                 

@@ -47,19 +47,17 @@
 
     //get data from my sql database
     function getData(){
-        $sql = "SELECT * FROM mybadnews   ";
-        //store returned statemnt in the $result varabile
+        $sql = "SELECT * FROM mybadnews   ORDER BY newsid DESC";
+        //store returned row in the $result varabile
         $result=mysqli_query($GLOBALS['con'],$sql);
-        if( mysqli_num_rows($result)>0){
-            // //just for testing
-            // while($row = mysqli_fetch_assoc($result)){
-            //     echo "newsid:". $row['newsid'] . "newstitle:" . $row['newstitle'] .
-            //     "news details" . $row['newsdetails'] . 'newsdate' . $row['newsdate'] ;
-            // }
-           $myResult= mysqli_fetch_array($result);
-         //   echo sizeof($myResult);
-         return $myResult;
+        if( $rwos=mysqli_num_rows($result)>0){
+            $rwos=mysqli_num_rows($result);
+            for($i=0;$i<$rwos;$i++){
+           $myResult[$i]= mysqli_fetch_array($result);
         }
+      
+         return $myResult;
+        }else{echo'database is emptey';}
 
         
     }
