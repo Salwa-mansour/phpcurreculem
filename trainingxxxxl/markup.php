@@ -37,8 +37,8 @@ function newsinput2($newsnumber,$newstitle,$newsdetails,$newsdate){
         <td>$title</td>
         <td>$details</td>
         <td>$newsdate</td>
-       <td><button name=\"update\"> <a href=\"delete.php?n=$id\">update</a></button></td>
-       <td><button name=\"delete\"> <a href=\"delete.php?n=$id\">delete</a></button></td>
+       <td><button name=\"edit\"> <a href=\"defult.php?n=$id\">edit</a></button></td>
+
         
         
        

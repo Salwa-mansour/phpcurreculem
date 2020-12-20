@@ -1,7 +1,7 @@
 <?php
  
  require_once("db.php");
- require_once("../selfstudy/books/function.php");
+ require_once("markup.php");
  // تضمين متغير الاتصال هنا من اجل استخدامه في  دوال الحذف و الاضافة و التعديل
  $con= createdb();
  
@@ -22,7 +22,7 @@
         if( $newsTitle && $newsDetails && $newsDate){
             $sql = "INSERT INTO mybadnews(newstitle,newsdetails,newsdate)
             
-            VALUES('$newsTitle','$newsDetails','$newsDate');";//I spend  a half hour to fegur out that i need to add the colulomns names inside ''
+            VALUES('$newsTitle','$newsDetails','$newsDate');";//I spend  a half hour to fegur out that i need to add the variables names inside ''
 
      if(mysqli_query($GLOBALS['con'], $sql)){
          textNode("succsess",'reconded scussesfully');
@@ -59,6 +59,53 @@
          return $myResult;
         }else{echo'database is emptey';}
 
+       
         
     }
+    //bring data of the row to the feilds
+    function editbtn($id){
+        $sql = "SELECT * FROM mybadnews   WHERE newsid=$id";
+        $result=mysqli_query($GLOBALS['con'],$sql);
+        $myResult=mysqli_fetch_array($result);
+      //  newsinput2($myResult['newsid'],$myResult['newstitle'],$myResult['newsdetails'],$myResult['newsdate']);
+   return$myResult;
+   
+    }
+     function updatedata(){
+        $newsTitle = textboxValue("news_title");
+        $newsDetails = textboxValue("news_details");
+        $newsDate = textboxValue("news_date");
+         $newsid=textboxValue('news_number');
+        if( $newsid&&$newsTitle && $newsDetails && $newsDate){
+            $sql =" UPDATE mybadnews SET newstitle='$newsTitle',newsdetails='$newsDetails',newsdate='$newsDate'
+             WHERE newsid='$newsid';
+             "; //I spend  a half hour to fegur out that i need to add the variables names inside ''
+                
+      
+
+     if(mysqli_query($GLOBALS['con'], $sql)){
+         textNode("succsess",'reconded updated scussesfully');
+     }else{echo 'upate error'.mysqli_error($GLOBALS['con']);}
+        }else{textNode('error2','txtbox are emptey');}
+    }
+  
+   function deletedata(){
+    // $newsTitle = textboxValue("news_title");
+    // $newsDetails = textboxValue("news_details");
+    // $newsDate = textboxValue("news_date");
+     $newsid=textboxValue('news_number');
+    if( $newsid){
+        $sql =" DELETE FROM mybadnews
+         WHERE newsid='$newsid';
+         "; //I spend  a half hour to fegur out that i need to add the variables names inside ''
+            
+  
+
+ if(mysqli_query($GLOBALS['con'], $sql)){
+     textNode("succsess",'reconded deleted scussesfully');
+ }else{echo 'delete error'.mysqli_error($GLOBALS['con']);}
+    }else{textNode('error3','txtbox are emptey');}
+   }
+
+   
  ?>
