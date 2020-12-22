@@ -1,5 +1,5 @@
 <?php 
- require_once("../books/function.php");
+ require_once("markup.php");
  require_once("opration.php")
 
 ?>
@@ -36,10 +36,10 @@
               <div class="displayflex">
                   <?php
                   //reade button cklick
-                 if(isset($_POST['read'])){
+           //      if(isset($_POST['read'])){
                 $result= getData();
                           readData($result['newsid'],$result['newstitle'],$result['newsdetails'],$result['newsdate']);
-                }
+            //    }
       
           
                   ?>

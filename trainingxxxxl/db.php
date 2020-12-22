@@ -15,7 +15,7 @@
         //create database
         $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
         if(mysqli_query($con,$sql)){
-            //create table in tha database
+            //connect to the  database
             $con = mysqli_connect($servername,$username,$password,$dbname);
             //create table in the data base
             $sql = "

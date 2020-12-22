@@ -27,3 +27,7 @@
 .displayfelx{
     border: rgb(189, 97, 97) solid 1px;
 }
+table th{
+    padding: 10;
+    border:1px solid black;
+}

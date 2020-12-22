@@ -2,7 +2,7 @@
  
  require_once("db.php");
  require_once("markup.php");
- // تضمين متغير الاتصال هنا من اجل استخدامه في  دوال الحذف و الاضافة و التعديل
+ // ﻞﻳﺪﻌﺘﻟا ﻭ ﺔﻓﺎﺿﻻا ﻭ ﻑﺬﺤﻟا ﻝاﻭﺩ  ﻲﻓ ﻪﻣاﺪﺨﺘﺳا ﻞﺟا ﻦﻣ ﺎﻨﻫ ﻝﺎﺼﺗﻻا ﺮﻴﻐﺘﻣ ﻦﻴﻤﻀﺗ
  $con= createdb();
  
 
@@ -32,8 +32,6 @@
     //we are sending the name of the input and reseving the value of it as returened valeu
     function textboxValue($value){
         $textbox = mysqli_real_escape_string($GLOBALS['con'],trim($_POST[$value]));
-        // the more secure version of
-       
         if(empty($textbox)){
             return false;
         }else{
@@ -50,7 +48,7 @@
         $sql = "SELECT * FROM mybadnews   ORDER BY newsid DESC";
         //store returned row in the $result varabile
         $result=mysqli_query($GLOBALS['con'],$sql);
-        if( $rwos=mysqli_num_rows($result)>0){
+        if( mysqli_num_rows($result)>0){
             $rwos=mysqli_num_rows($result);
             for($i=0;$i<$rwos;$i++){
            $myResult[$i]= mysqli_fetch_array($result);
@@ -98,13 +96,10 @@
         $sql =" DELETE FROM mybadnews
          WHERE newsid='$newsid';
          "; //I spend  a half hour to fegur out that i need to add the variables names inside ''
-            
-  
-
- if(mysqli_query($GLOBALS['con'], $sql)){
-     textNode("succsess",'reconded deleted scussesfully');
- }else{echo 'delete error'.mysqli_error($GLOBALS['con']);}
-    }else{textNode('error3','txtbox are emptey');}
+                if(mysqli_query($GLOBALS['con'], $sql)){
+                 textNode("succsess",'reconded deleted scussesfully');
+                 }else{echo 'delete error'.mysqli_error($GLOBALS['con']);}
+    }else{textNode('error3','bring an id');}
    }
 
    
