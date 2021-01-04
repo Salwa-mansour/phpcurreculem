@@ -6,6 +6,7 @@
 
  if( mysqli_query($con,$sql)){
      $sql='CREATE TABLE IF NOT EXISTS imgs(
+         id INT(11) AUTO_INCREMENT PRIMARY KEY ,
          img BLOB ,
          bio VARCHAR(300)
      )';
@@ -16,5 +17,5 @@
       return $con;
    }else{echo"databs create error".mysqli_error($con);}
 }
-   
+
 ?>

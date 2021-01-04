@@ -1,0 +1,16 @@
+body{
+    background-color: antiquewhite;
+}
+.fromdiv{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    /* text-align: center; */
+}
+.fromdiv textarea,
+.fromdiv label{
+    display: block;
+    width: 100%;
+}
