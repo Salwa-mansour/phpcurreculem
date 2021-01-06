@@ -1,7 +1,11 @@
 body{
     background-color: antiquewhite;
 }
-.fromdiv{
+*{
+    padding: 0;
+    margin: 0;
+}
+.centerdiv{
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -9,8 +13,22 @@ body{
     margin: auto;
     /* text-align: center; */
 }
-.fromdiv textarea,
-.fromdiv label{
+.centerdiv textarea,
+.centerdiv label{
     display: block;
     width: 100%;
+}
+.massege{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+.sucsess_massege{
+    background-color: rgb(81, 194, 81);
+}
+.failed_massege{
+    background-color: rgb(189, 84, 84);
+}
+.centerdiv img{
+    max-width: 300px;
 }

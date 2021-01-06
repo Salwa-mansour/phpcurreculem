@@ -5,9 +5,9 @@
  $sql="CREATE DATABASE IF NOT EXISTS imgdb";
 
  if( mysqli_query($con,$sql)){
-     $sql='CREATE TABLE IF NOT EXISTS imgs(
+     $sql='CREATE TABLE IF NOT EXISTS imgs2(
          id INT(11) AUTO_INCREMENT PRIMARY KEY ,
-         img BLOB ,
+         img VARCHAR(40) ,
          bio VARCHAR(300)
      )';
     $con=mysqli_connect('localhost','root','','imgdb');

@@ -1,6 +1,5 @@
 <?php
- include_once('db.php');
- createdb();
+
  //the file than graps information from the form 
  include_once('processform.php');
 ?>
@@ -15,15 +14,26 @@
 <?php include('style.css') ; ?>
 </style>
 <body>
-    <div class="fromdiv">
-    <form action="processform.php" method="post" class="myform" enctype="multipart/form-data">
+    <div class="info">
+        <h1>Lorem, ipsum dolor.</h1>
+        <?php if(!empty($msg)):   ?>
+            <p class="massege <?php echo $css_class; ?>"  > <?php echo $msg; ?> </p>
+          
+            <?php endif; ?>
+    </div>
+    <div class="centerdiv">
+
+    <form action="defult.php" method="post" class="myform" enctype="multipart/form-data">
     
-    <label for="profileImage">profileImge</label>
-    <input type="file" name="profileImage" id="">
+    <label for="profileImage">choose profileImge</label>
+    <input type="file" name="profileImage" id="profileImage" onchange="displayImage(this)" style="display: none;">
+    <img src="./images/placeholder.png" alt="" id="profileDisplay" onclick="triggerClick()">
     <label for="bio">bio</label>
     <textarea name="bio" id="" cols="30" rows="10"></textarea>
     <button type="submit" name="save_user">save user</button>
     </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
