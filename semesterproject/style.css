@@ -1,0 +1,236 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'amiri' ,serif;
+    direction: rtl;
+}
+/* body{
+    background-color:rgb(248, 227, 200);
+} */
+.header{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+ 
+    /* z-index:-50; */
+}
+
+/* ------------------- The navbar markup ------------------ */
+.nav{
+    position: absolute;
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.432); */
+    width: 100%;
+    height: 80px;
+    color:brown;
+    background-color: rgba(173, 122, 55, 0.164);
+    z-index: 40;
+}
+#nav-check{
+    display: none;
+}
+.nav-header{
+    display: inline-block;
+    padding: 1rem;
+    padding-bottom: 0;
+    font-size: 1.5rem;
+    text-shadow: #ffffff 2px 2px 2px;
+}
+.nav-btn{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+   
+}
+.nav-btn label{
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(243, 230, 188, 0.507);
+    padding: 10px;
+}
+.nav-btn label span{
+    height: 8px;
+    width: 25px;
+    display: block;
+    border-top: 3px solid brown;
+}
+.nav-links{
+    position: absolute;
+    /* width: 100%; */
+    top: 70px;
+    left: 0;
+    /* background-color: rgba(173, 122, 55, 0.616); */
+    font-size: 1.1rem;
+    transition: all .3s ease-in;
+    height: 0;
+    overflow-y: hidden;
+    z-index: 0;
+   
+}
+.nav-links a{
+    display: block;
+    padding:5px  10px;
+    margin: 8px 0;
+    text-shadow: #ffffff 2px 2px 2px;
+    text-decoration: none;
+    color: brown;
+    /* background-color: red; */
+}
+
+
+.nav-links a:hover{
+    background-color: rgba(110, 59, 59, 0.596);
+}
+
+
+.nav #nav-check:checked ~ .nav-links{
+    height: 50vh;
+}
+@media (min-width:600px){
+    .nav-btn{
+        display: none;
+    }
+    .nav-links a{
+        display: inline-block;
+        border-bottom: 0;
+    }
+   .nav-links{
+        height:auto;
+        top: 0;
+        left: 0;
+        width: auto;
+        padding: 1rem;
+    }
+    .nav #nav-check:checked ~ .nav-links{
+        height: auto;
+    }
+    .nav a::before{
+        content: "";
+        
+    }
+}
+/* ------------- hero imge styling -------------- */
+/* html,body{
+    width: 100%;
+    height: 100%;
+} */
+.hero{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    /* z-index: -30; */
+}
+.hero::before{
+    position: absolute;
+    background-image: url(../images/thin1.jpg);
+    background-size: cover;
+    background-position: bottom;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: .7;
+}
+@media (min-width:540px){
+    .hero::before{
+        background-image: url(../images/wide1.jpg);
+    }
+    
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.hero::after{
+    background-color:rgb(184, 120, 37) ;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    z-index: 20;
+}
+.hero-message{
+    position: relative;
+    background-color: rgba(110, 59, 59, 0.596);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 30;
+    min-width: 100%;
+    min-height: 12rem;
+    color: #fff;
+    line-height: 2;
+    padding-right: 30%;
+    transform: translateY(50%);
+    text-shadow: #343a40 2px 2px;
+}
+.hero-message h2{
+    padding-left: 30%;
+    text-align: center;
+}
+@media (min-width:540px){
+    .hero-message h2{
+        
+        text-align: start;
+    }
+}
+/* ------------------- listposts page stilnge---------------- */
+.main{
+    position:relative;
+    top: 100px;
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid red;
+    max-width: 900px;
+}
+.main .contentdiv{
+  
+    border: 3px solid rgb(0, 4, 255);
+}
+.main aside{
+    width: 100%; 
+    border: 3px solid rgb(24, 104, 67);
+    text-align: center;
+}
+@media (min-width:750px){
+    .main{
+        flex-wrap: nowrap;
+    }
+    aside{
+          min-width: 200px;
+    }
+}
+
+/* -------------- artichle boxes -------------- */
+.main-article-box{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.article-box{
+    margin: 1rem;
+}
+@media (min-width:750px){
+ 
+    .article-box{
+        max-width: 300px;
+    }
+}
