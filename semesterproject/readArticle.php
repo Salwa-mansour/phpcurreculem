@@ -1,22 +1,23 @@
 
 <?php
+include_once('oprations.php');
 include_once('headernav.php');
+$row=editbtn($_GET['n']);
 include_once('main.php');
 ?>
    
         <div class="contentdiv">
             <section>
-                <h1>article tile</h1>
-                <small>publish date</small>
+                <h1><?php echo $row['articleTitle']; ?> </h1>
+                <small><?php echo $row['publishDate']; ?></small>
                 <article>
                 <figure>
-                    <img src="./images/wide1.jpg" alt="" width="100%">
+                    <img src="./images/<?php echo $row['articleImgName']; ?>" alt="" width="100%">
                     <figcaption>
-                        consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna 
+                    <?php  echo $row['articleSummery']; ?>
                        </figcaption>
                 </figure>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus temporibus fugit accusantium ea porro repellat nesciunt fugiat placeat, suscipit nam aliquid aut. Aut minus eaque officiis quae possimus error modi exercitationem necessitatibus officia fugiat, culpa cumque maiores sed molestias omnis consequatur ea quibusdam recusandae optio tempore in! Velit fugiat, sit recusandae veniam alias quos eius maiores doloremque maxime nobis iste consequatur autem amet libero eligendi tempora reiciendis assumenda ipsam? Saepe, vitae hic nam quasi rem velit autem placeat facere veniam ratione dignissimos? Optio magni at numquam, nesciunt in ea sit blanditiis magnam inventore distinctio voluptatibus ducimus? Nihil dolorem dignissimos quaerat.</p>
+                <p><?php echo $row['publishDate']; ?></p>
                 </article>
             </section>
         </div>

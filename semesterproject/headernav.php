@@ -14,7 +14,7 @@
     <nav class="nav">
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
-            <h1> <a href="./headernav.php">مدينتي</a> </h1>
+            <h1> <a href="landingpage.php">مدينتي</a> </h1>
         </div>
     
 
@@ -27,9 +27,9 @@
     </div>
 
     <div class="nav-links">
-        <a href="#1">المنتدى</a>
-        <a href="./articlesboxes.php">المدونة</a>
-        <a href="#1">اخبار</a>
+        <a href="#1" style="pointer-events: none;color:gray;">المنتدى</a>
+        <a href="./articlesboxes.php"  style="pointer-events: none;color:gray;">المدونة</a>
+        <a href="./articlesboxes.php">اخبار</a>
         <a href="#1">من نحن</a>
     </div>
     </nav>

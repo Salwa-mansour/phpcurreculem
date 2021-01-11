@@ -122,11 +122,11 @@
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-    /* z-index: -30; */
+    /* z-index: 30; */
 }
 .hero::before{
     position: absolute;
-    background-image: url(../images/thin1.jpg);
+    background-image: url(./images/thin1.jpg);
     background-size: cover;
     background-position: bottom;
     content: "";
@@ -140,7 +140,7 @@
 }
 @media (min-width:540px){
     .hero::before{
-        background-image: url(../images/wide1.jpg);
+        background-image: url(./images/wide1.jpg);
     }
     
 }
@@ -196,7 +196,7 @@
     display: flex;
     flex-wrap: wrap;
     border: 3px solid red;
-    max-width: 900px;
+    max-width: 1200px;
 }
 .main .contentdiv{
   

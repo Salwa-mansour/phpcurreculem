@@ -11,11 +11,13 @@ function createdb(){
     if(mysqli_query($con,$sql)){
      $sql="
         CREATE TABLE IF NOT EXISTS articles(
-            article_id INT AUTO_INCREMENT PRIMARY KEY,
-            article_title VARCHAR(100) ,
-            article_summery VARCHAR(300),
-            article_detials VARCHAR(10000),
-            publish_date DATE
+            articleId INT AUTO_INCREMENT PRIMARY KEY,
+            articleTitle VARCHAR(100) ,
+            publishDate DATE,
+            articleSummery VARCHAR(300),
+            articleDetials VARCHAR(10000),
+            
+            articleImgName VARCHAR(100)
         );
      ";
      $con=mysqli_connect($serverName,$userName,$passWrod,$dbName);

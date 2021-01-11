@@ -18,5 +18,8 @@ include_once('headernav.php');
     </div> -->
  
     <?php
+
+include('main.php');
+include('articlesboxes.php');
 include_once('footer.php');
 ?>
