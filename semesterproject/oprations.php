@@ -5,17 +5,19 @@ $con=createdb();
 
 //create button click to fire the function
 if(isset($_POST['save'])){
-    // $_GET['$n']="";
     createData();
 }
 if(isset($_POST['update'])){
-    // $_GET['$n']="";
-    updateData($_GET['n']);
-}
+   // echo"function faired  ";
+   //  print_r($_POST['editId'] )  ;
+    updateData($_POST['editId']);
+
+}//else{echo"functions not faired";}
 if(isset($_POST['delete'])){
-    // $_GET['$n']="";
-    deleteData($_GET['n']);
+  
+    deleteData($_POST['editId']);
 }
+
     //save function
 function createData(){
     $articleTitle = textboxValue("article_title");//article_title is the input field name
@@ -68,7 +70,7 @@ function getData(){
     else{echo("database is empty");}
 }
 //bring text of selected row to the input fiedls when clicking the edit button
-function editbtn($id){
+function gitselectedrow($id){
     $sql="
     SELECT * FROM articles WHERE articleId='$id';
     ";
@@ -88,16 +90,17 @@ function updateData($id){
     $articleImageName =time()."_". $_FILES['article_img']['name'];
     $target ='./images/'. $articleImageName;
    
-    if($articleTitle && $publishDate && $articleSummery && $articleDetials && move_uploaded_file($_FILES['article_img']['tmp_name'],$target)){
+    if($articleTitle && $publishDate && $articleSummery && $articleDetials ){
+        move_uploaded_file($_FILES['article_img']['tmp_name'],$target);
         // $sql = "
         //     INSERT INTO articles(
         //         articleTitle,publishDate,articleSummery,articleDetials,articleImgName)
         //     VALUES('$articleTitle','$publishDate','$articleSummery','$articleDetials','$articleImageName');
         // ";
         $sql = "
-        UPDATE articles SET articleTitle='$articleTitle' ,publishDate='$publishDate'
-         ,articleSummery='$articleSummery' ,articleDetials='$articleDetials',articleImgName='$articleImageName'
-        WHERE articleId='$id';
+        UPDATE articles SET articleTitle='$articleTitle' ,publishDate='$publishDate' ,
+        articleSummery='$articleSummery' , articleDetials='$articleDetials', articleImgName='$articleImageName'
+        WHERE articleId ='$id';
         ";
     if(mysqli_query($GLOBALS['con'],$sql)){
         textNode("","updated scussesfully");
@@ -107,11 +110,16 @@ function updateData($id){
 ////////////////////////////
 function deleteData($id){
      $sql = "
-            DELETE FROM articles ';
+            DELETE  FROM articles WHERE articleId ='$id';
             ";
             if(mysqli_query($GLOBALS['con'],$sql)){
                 textNode('',"deleted sucssesfully");
+            
             }else{echo("delete error".mysqli_error($GLOBALS['con']));}
-    }
 
+    }
+///////-- page refriesh////////
+// function pageRefresh(){
+//     header('controlpanel.php');
+// }
 ?>

@@ -195,24 +195,27 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     max-width: 1200px;
 }
-.main .contentdiv{
-  
-    border: 3px solid rgb(0, 4, 255);
-}
+/* .main .contentdiv{ */
+    /* min-width: ; */
+    /* border: 3px solid rgb(0, 4, 255); */
+/* } */
 .main aside{
     width: 100%; 
-    border: 3px solid rgb(24, 104, 67);
+    /* border: 3px solid rgb(24, 104, 67); */
     text-align: center;
 }
 @media (min-width:750px){
     .main{
         flex-wrap: nowrap;
     }
-    aside{
-          min-width: 200px;
+    .main aside{
+         max-width: 200px;
+    }
+    .contentdiv{
+        min-width: calc(100% - 199px);
     }
 }
 

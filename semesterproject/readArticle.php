@@ -2,7 +2,7 @@
 <?php
 include_once('oprations.php');
 include_once('headernav.php');
-$row=editbtn($_GET['n']);
+$row=gitselectedrow($_GET['n']);
 include_once('main.php');
 ?>
    
@@ -17,7 +17,7 @@ include_once('main.php');
                     <?php  echo $row['articleSummery']; ?>
                        </figcaption>
                 </figure>
-                <p><?php echo $row['publishDate']; ?></p>
+                <p><?php echo $row['articleDetials']; ?></p>
                 </article>
             </section>
         </div>

@@ -1,16 +1,18 @@
 <?php
 require_once('oprations.php');
 
-require_once('headernav.php');
-require_once('main.php');
+// require_once('headernav.php');
+// require_once('main.php');
 
 // $_GET['n']="";
 
 $row = array("articleTitle"=>"", "articleSummery"=>"", "publishDate"=>"", "articleDetials"=>"");
-if($id=$_GET['n']){
- $row =editbtn($id);
+if(isset($_GET['n'])){
+    $id=$_GET['n'];
+ $row =gitselectedrow($id);
  }
 $articles=getData();
+
 
 ?>
 
@@ -25,10 +27,11 @@ $articles=getData();
     <!-- <input type="file" name="profileImage" id="profileImage" "> -->
     <button name="save" value="save">save</button>
     <button name="update" value="update">update</button>
-    <button name="detele" value="detele">detele</button>
-    
-</form>
-
+    <button name="delete" value="delete">delete</button>
+    <input type="hidden" name='editId' value="<?php echo $row['articleId']; ?> ">
+    <!-- <button name="update" value="update" > <a href="controlpanel.php?n=<?php// echo $row['articleId']; ?> ">update</a></button>
+    <button name="delete" value="delete"> <a href="controlpanel.php?n=<?php //echo $row['articleId']; ?> ">delete</a></button> -->
+   </form>
 <table>
                 <thead>
                     <tr>
@@ -40,7 +43,8 @@ $articles=getData();
                     </tr> 
                 </thead>
                 <tbody>
-                    <?php foreach ($articles as $article): ?>
+                    <?php if(isset($articles)): 
+                        foreach ($articles as $article): ?>
                         <tr>
 
                           
@@ -50,12 +54,14 @@ $articles=getData();
                            <td> <?php echo $article['articleDetials']; ?> </td>
                           
                             <td><img src=" images/<?php echo $article['articleImgName']; ?> " width="100px" alt=""></td>
-                            <td><button name="edit"><a href="controlpanel.php?n=<?php echo $article['articleId']; ?> ">edit</td>
+                            <td><button name="edit"><a href="controlpanel.php?n=<?php echo $article['articleId']; ?> ">edit</a></td>
                         <!-- <audio src="images/1610267454_atumn shrine edited" controls=""></audio>dddd -->
                            
                             
                         </tr>
                     <?php endforeach; ?>
+                    <?php endif; ?>
+                    
                 </tbody>
             </table>
 
