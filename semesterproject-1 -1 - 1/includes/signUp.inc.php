@@ -38,7 +38,7 @@ if(isset($_POST["submituser"])){
         exit();
     }
 
-    if(uidExists($con2,$username) !== false){
+    if(uidExists($con2,$username,$email) !== false){
         header("location: ../sigenUp.php?error=usernametaken");
         //exit to stop the script from running if any thing is going weird
         exit();
