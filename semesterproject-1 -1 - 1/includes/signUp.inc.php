@@ -1,5 +1,5 @@
 <?php
-include_once('dbh.inc.php');
+// include_once('../db.php');
 
 
 if(isset($_POST["submituser"])){
@@ -10,7 +10,7 @@ if(isset($_POST["submituser"])){
     $pwd=$_POST['pwd'];
     $pwdRepeat=$_POST['pwdrepeat'];
 
- require_once('dbh.inc.php');
+ require_once('../db.php');
  require_once('functions.inc.php'); 
  //we use !== false to be sure that the returned value is the opsite of false wich is
  // true and not any other result wich may cosiedred by the langeus as true

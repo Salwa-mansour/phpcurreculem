@@ -1,6 +1,7 @@
 <?php
 // https://www.youtube.com/watch?v=gCo6JqGMi30&t=6382s
-include_once('dbh.inc.php');
+include_once('dbh.php');
+$con2=createdb();
 /////////////
 function emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat){
         $result;

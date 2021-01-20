@@ -1,11 +1,12 @@
 <?php
 include_once('headernav.php');
 include_once('main.php');
-
+// include_once('includes/signUp.inc.php');
+// echo(uidExists($con2,$username,$email).'hello') ;
 ?>
 
 <section>
-    
+
     <form action="includes/signUp.inc.php" method="post" class="inputform">
     <h2>sign up</h2>
         <input type="text" name="name" placeholder="full name " id="">
