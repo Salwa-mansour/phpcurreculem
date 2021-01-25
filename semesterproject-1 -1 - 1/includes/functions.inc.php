@@ -4,7 +4,7 @@ include_once('dbh.php');
 $con2=createdb();
 /////////////
 function emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat){
-        $result;
+        $result=0;
         if(empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)){
             $result = true;
         }else{$result = false;}
@@ -12,7 +12,7 @@ function emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat){
 }
 //////////////
 function invalidUid($username){
-        $result;
+        $result=0;
         if(!preg_match("/^[a-zA-Z0-9]*$/",$username)){
             $result = true;
         }else{$result = false;}
@@ -20,7 +20,7 @@ function invalidUid($username){
 }
 //////////////
 function invalidemail($email){
-        $result;
+        $result=0;
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
             $result = true;
         }else{$result = false;}
@@ -28,7 +28,7 @@ function invalidemail($email){
 }
 ///////////
 function passwordMach($pwd,$pwdRepeat){
-        $result;
+        $result=0;
         if($pwd !== $pwdRepeat){
             $result = true;
         }else{$result = false;}
@@ -36,7 +36,7 @@ function passwordMach($pwd,$pwdRepeat){
 }
 ///////////
 function uidExists($con2,$username,$email){
-    $result;
+    $result=0;
        $sql="
         SELECT * FROM adminUsers
         WHERE adminUsername = ? OR adminEmail = ? ;
@@ -63,7 +63,7 @@ function uidExists($con2,$username,$email){
 $hashedPwd = password_hash($pwd,PASSWORD_DEFAULT);
 ///////////////////
 function createUser($con2,$name,$email,$username,$hashedPwd){
-    $result;
+    $result=0;
        $sql="
         INSERT INTO adminUsers(adminFullName,adminUsername,adminEmail,adminPassWord)
         VALUES(?,?,?,?);
